@@ -15,9 +15,12 @@ const Lover: FunctionComponent<loverProps> = (props) => {
 
     return(
         <div>
-            <a href={`/search/${name}`}>{name}</a>
+            <h3>{name}</h3>
+            <p>Age: {age} <br/> Sex: {sex} <br/> </p>
             <image src={photo} alt={name+ "'s photo"}/>
-            <p>{description}</p>
+            <p>Description: {description} <br/> Hobbies: {hobbies} <br/> Comments: {comments} </p>
+            
+
         </div>
     )
 }

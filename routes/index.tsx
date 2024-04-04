@@ -21,6 +21,7 @@ export default function Home(props: PageProps<Lover[]>) {
 
   return (
     <div>
+      <button onClick="location.href='/register'">Register</button>
       <Lovers data={props.data} />
     </div>
   );
