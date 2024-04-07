@@ -8,27 +8,17 @@ export const handler: Handlers = {
         const dataForm = await req.formData();
         const data = {
             name: dataForm.get("name") || undefined,
+            password: dataForm.get("password") || undefined,
             age: dataForm.get("age") || undefined,
             sex: dataForm.get("sex") || undefined,
-            description:
-            hobbies:
-            photo:
-            comments:
-
+            description: dataForm.get("description")|| undefined, 
+            hobbies: dataForm.get("hobbies") || undefined,
+            photo: dataForm.get("photo") || undefined,
         }
+        //guardar en cookies el nombre y la contraseña... where tf esta la contraseña huh??
 
-        /*
-        _id: string,
-    name: string,
-    age: number,
-    sex: string,
-    description: string,
-    hobbies: Array<string>,
-    photo: string,
-    comments: Array<string>
-        */
 
-        
+        return ctx.render();
     } 
 }
 
