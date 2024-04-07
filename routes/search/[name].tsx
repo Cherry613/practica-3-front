@@ -24,10 +24,12 @@ export const handler: Handlers = {
 
 const Page = (props: PageProps<Lover>) => {
     const {name, age, sex, description, hobbies, photo, comments} = props.data;
+    // <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments} />
 
+    //  SI HAY COMENTARIOS EL COMPONENTE NO FUNCIONA :]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
     return (
         <div>
-            <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments} />
+           hola
         </div>
     )
 

@@ -12,7 +12,7 @@ const Lovers: FunctionComponent<loversProps> = (props) => {
     console.log(data);
     return (
         <div>
-           {data.map((lover) => <LoverComp name = {lover.name} age = {lover.age} sex = {lover.sex} description = {lover.description} hobbies={lover.hobbies} photo= {lover.photo} comments={lover.comments}/>)} 
+           {data.map((lover) => <LoverComp name = {lover.name}  description = {lover.description} photo= {lover.photo}/>)} 
         </div>
     )
 }
