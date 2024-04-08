@@ -12,5 +12,5 @@ export type Lover = {
 export type comment = {
     user: string;
     message: string;
-  };
+};
   
