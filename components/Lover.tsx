@@ -2,12 +2,8 @@ import { FunctionComponent } from "preact";
 
 type loverProps = {
     name: string,
-
-
     description: string,
-
     photo: string,
-
 }
 
 const Lover: FunctionComponent<loverProps> = (props) => {

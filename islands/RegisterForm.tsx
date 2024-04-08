@@ -1,5 +1,7 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent, JSX } from "preact";
+import { comment } from "../types.ts";
+
 
 
 
@@ -15,7 +17,6 @@ import { FunctionComponent, JSX } from "preact";
 
 //no hay llamadas a una ruta -> cliente
 
-
 //datos confidenciales -> sí o sí en el servidor
 //para q los motores de busqueda posicionen mi pag (SEO)
 /* hook -> acciones que se lanzan como reaccion a algo
@@ -30,7 +31,7 @@ const RegisterForm: FunctionComponent = () => {
     const [description, setDesc] = useState<string>("");
     const [hobbies, setHobbies] = useState<string[]>([]);
     const [photo, setPhoto] = useState<string>("");
-    const [comments, setComments] = useState<string[]>([]);
+    const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string>("");
 
 
@@ -38,12 +39,12 @@ const RegisterForm: FunctionComponent = () => {
         e.preventDefault();
         const errorMsg: string[] = [];
 
-        if(name === "" || sex === "" || description === "" || photo === "" ) {
-            errorMsg.push("Missing name, sex, description or photo");
+        if(name === "" || sex === "" || description === "" || photo === "" || password == "") {
+            errorMsg.push("Missing name, sex, description, photo or password");
         }
 
         if(age === null){
-            errorMsg.push("Missing age");
+            errorMsg.push("Missing age or comments");
         }
 
         if(hobbies.length === 0){
@@ -94,6 +95,12 @@ const RegisterForm: FunctionComponent = () => {
            placeholder={"Photo"}
            onFocus={() => setError("")}
            onInput={(p) => setPhoto(p.currentTarget.value)}/>                    
+        </div>
+        <div>
+           <input type="text" id="password" name="password"
+           placeholder={"Password"}
+           onFocus={() => setError("")}
+           onInput={(p) => setPassword(p.currentTarget.value)}/>                    
         </div>
         
         <div>

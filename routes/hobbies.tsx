@@ -19,11 +19,7 @@ const Page= (props: PageProps) => {
 
     return(
         <div>
-            {hobbies.map((elem:string) => {
-                    return(
-                        <div>{elem}</div>
-                    )
-            } )}
+            {hobbies.map((elem:string) => <div>{elem}</div>)}
         </div>
     )
 }

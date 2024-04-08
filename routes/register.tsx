@@ -1,5 +1,7 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
+import axios from "npm:axios";
 import RegisterForm from "../islands/RegisterForm.tsx";
+import { Lover } from "../types.ts";
 
 
 export const handler: Handlers = {
@@ -15,8 +17,29 @@ export const handler: Handlers = {
             hobbies: dataForm.get("hobbies") || undefined,
             photo: dataForm.get("photo") || undefined,
         }
-        //guardar en cookies el nombre y la contraseña... where tf esta la contraseña huh??
 
+        /*document.cookie = `user=${data.name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+        document.cookie = `password=${data.password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;*/
+        debugger;
+        //alert('¡Cuenta creada! Puedes iniciar sesión ahora.');
+
+        const response = await axios.post<Lover>("https://lovers.deno.dev/", {
+            name:data.name,
+            password: data.password,
+            age: data.age,
+            sex:data.sex,
+            description: data.description,
+            hobbies: data.hobbies,
+            photo:data.photo,
+            comments: []
+        })
+
+        if(response.status !== 201){
+            return ctx.render({
+                message: "",
+                error: "No se ha podido crear el lover"
+            })
+        }
 
         return ctx.render();
     } 

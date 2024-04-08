@@ -9,7 +9,7 @@ type loversProps ={
 
 const Lovers: FunctionComponent<loversProps> = (props) => {
     const {data} = props
-    console.log(data);
+   // console.log(data);
     return (
         <div>
            {data.map((lover) => <LoverComp name = {lover.name}  description = {lover.description} photo= {lover.photo}/>)} 

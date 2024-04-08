@@ -29,7 +29,7 @@ const Page = (props: PageProps<Lover>) => {
     //  SI HAY COMENTARIOS EL COMPONENTE NO FUNCIONA :]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
     return (
         <div>
-           hola
+           <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} />
         </div>
     )
 

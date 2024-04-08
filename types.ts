@@ -6,5 +6,11 @@ export type Lover = {
     description: string,
     hobbies: Array<string>,
     photo: string,
-    comments: Array<string>
+    comments: comment[],
 }
+
+export type comment = {
+    user: string;
+    message: string;
+  };
+  
