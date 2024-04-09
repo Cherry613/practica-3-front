@@ -30,6 +30,7 @@ const Page = (props: PageProps<Lover>) => {
     return (
         <div>
            <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments}/>
+           <a href={`/delete/${name}`}>Borrar</a>
         </div>
     )
 

@@ -3,8 +3,6 @@ import { FunctionComponent, JSX } from "preact";
 import { comment } from "../types.ts";
 
 
-
-
 //hacer el formulario para el nombre y la contraseña
 // hacer funcion para comprobar que están los dos cosos antes de hacer submit
 /*
@@ -33,6 +31,9 @@ const RegisterForm: FunctionComponent = () => {
     const [photo, setPhoto] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string>("");
+
+    /*document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;*/
 
 
     const faltanDatos = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {

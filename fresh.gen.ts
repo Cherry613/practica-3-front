@@ -4,12 +4,15 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_DeleteLover from "./routes/api/DeleteLover.ts";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $delete_name_ from "./routes/delete/[name].tsx";
 import * as $hobbies from "./routes/hobbies.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $register from "./routes/register.tsx";
 import * as $search_name_ from "./routes/search/[name].tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $DeleteLover from "./islands/DeleteLover.tsx";
 import * as $RegisterForm from "./islands/RegisterForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -17,7 +20,9 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/DeleteLover.ts": $api_DeleteLover,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/delete/[name].tsx": $delete_name_,
     "./routes/hobbies.tsx": $hobbies,
     "./routes/index.tsx": $index,
     "./routes/register.tsx": $register,
@@ -25,6 +30,7 @@ const manifest = {
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
+    "./islands/DeleteLover.tsx": $DeleteLover,
     "./islands/RegisterForm.tsx": $RegisterForm,
   },
   baseUrl: import.meta.url,
