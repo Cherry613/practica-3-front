@@ -65,43 +65,43 @@ const RegisterForm: FunctionComponent = () => {
            <input type="text" id="name" name="name"
             placeholder={"Introduce tu nombre"}
             onFocus={() => setError("")}
-            onInput={(p) => setName(p.currentTarget.value)}/>                    
+            onBlur={(p) => setName(p.currentTarget.value)}/>                    
         </div>
         <div>
            <input type="number" id="age" name="age"
            placeholder={"Edad"}
            onFocus={() => setError("")}
-           onInput={(e) => setAge(parseInt(e.currentTarget.value))}/>                    
+           onBlur={(e) => setAge(parseInt(e.currentTarget.value))}/>                    
         </div>
         <div> 
            <input type="text" id="sex" name="sex"
            placeholder={"Sexo"}
            onFocus={() => setError("")}
-           onInput={(s) => setSex(s.currentTarget.value)}/>                    
+           onBlur={(s) => setSex(s.currentTarget.value)}/>                    
         </div>
         <div>
            <input type="text" id="description" name="description"
            placeholder={"Descripcion"}
            onFocus={() => setError("")}
-           onInput={(d) => setDesc(d.currentTarget.value)}/>                    
+           onBlur={(d) => setDesc(d.currentTarget.value)}/>                    
         </div>
         <div>
            <input type="text" id="hobbies" name="hobbies"
            placeholder={"Hobbies"}
            onFocus={() => setError("")}
-           onInput={(h) => setHobbies([...hobbies ,h.currentTarget.value])}/>                    
+           onBlur={(h) => setHobbies([...hobbies ,h.currentTarget.value])}/>                    
         </div>
         <div>
            <input type="text" id="photo" name="photo"
            placeholder={"Photo"}
            onFocus={() => setError("")}
-           onInput={(p) => setPhoto(p.currentTarget.value)}/>                    
+           onBlur={(p) => setPhoto(p.currentTarget.value)}/>                    
         </div>
         <div>
            <input type="text" id="password" name="password"
            placeholder={"Password"}
            onFocus={() => setError("")}
-           onInput={(p) => setPassword(p.currentTarget.value)}/>                    
+           onBlur={(p) => setPassword(p.currentTarget.value)}/>                    
         </div>
         
         <div>

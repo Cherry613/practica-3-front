@@ -2,6 +2,7 @@ import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import axios from "npm:axios";
 import Lovers from "../components/Lovers.tsx"
 import {Lover} from "../types.ts";
+import Filtros from "../islands/Filtros.tsx";
 
 
 export const handler : Handlers = {
@@ -23,7 +24,9 @@ export default function Home(props: PageProps<Lover[]>) {
     <div class="mainPage">
       <h1>LoversMatch</h1>
       <button class="register-button" onClick="location.href='/register'">Register</button>
+      <Filtros data = {props.data} />
       <Lovers data={props.data} />
+     
     </div>
   );
 }

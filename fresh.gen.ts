@@ -14,6 +14,7 @@ import * as $register from "./routes/register.tsx";
 import * as $search_name_ from "./routes/search/[name].tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $DeleteLover from "./islands/DeleteLover.tsx";
+import * as $Filtros from "./islands/Filtros.tsx";
 import * as $RegisterForm from "./islands/RegisterForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -33,6 +34,7 @@ const manifest = {
   islands: {
     "./islands/Counter.tsx": $Counter,
     "./islands/DeleteLover.tsx": $DeleteLover,
+    "./islands/Filtros.tsx": $Filtros,
     "./islands/RegisterForm.tsx": $RegisterForm,
   },
   baseUrl: import.meta.url,
