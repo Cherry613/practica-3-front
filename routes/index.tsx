@@ -20,8 +20,9 @@ export const handler : Handlers = {
 export default function Home(props: PageProps<Lover[]>) {
 
   return (
-    <div>
-      <button onClick="location.href='/register'">Register</button>
+    <div class="mainPage">
+      <h1>LoversMatch</h1>
+      <button class="register-button" onClick="location.href='/register'">Register</button>
       <Lovers data={props.data} />
     </div>
   );

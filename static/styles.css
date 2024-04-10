@@ -1,4 +1,74 @@
 
+h1 {
+  text-shadow: 0 0 7px #ff00bf;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+}
+
+/*
+f75d8a
+f879d8
+fb86ba creo q este es el q mas me gusta al menos en portatil
+o el fabada q es aun mas pastel
+f8c1dc y ese aun mas
+*/
+.mainPage{
+  background-color: #f8c1dc;
+}
+
+.register{
+  background-color: #f8c1dc;
+}
+
+.register-button{
+  background-color: rgb(109, 166, 251);
+  border: solid 2px rgb(86, 151, 248);
+  color:rgb(247, 237, 224);
+  font-size: 20px;
+  &:hover{
+    background-color: rgb(66, 140, 252);
+  }
+}
+
+/*
+border: #8aa4d8 solid 2px;
+  border-radius: 5%;
+  box-shadow: #6b7280;
+  background-color: aqua;
+*/
+.lover{
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+  align-items: center ;
+  flex-wrap: wrap;
+  margin: 10px 0px 10px 0px;
+  width: 250px;
+  text-align: center;
+  background-color: #fff6da;
+  box-shadow: 0 0 10px 0 #ff00bf;/*rgba(0,0,0,0.2)*/
+  border-radius: 10px;
+  h2{
+    align-items: flex-start;
+  }
+}
+
+.lovers {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.image{
+  scale: 90%;
+  border-radius: 2%;
+}
+
+
 *,
 *::before,
 *::after {

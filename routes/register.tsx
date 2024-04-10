@@ -49,7 +49,7 @@ export const handler: Handlers = {
 const Page = (props: PageProps) => {
 
     return (
-        <div>
+        <div class="register">
             <h1>Introduce tus datos</h1>
             <RegisterForm/>
         </div>
