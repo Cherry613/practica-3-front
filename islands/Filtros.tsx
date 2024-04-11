@@ -10,6 +10,7 @@ type FilterProps ={
 
 const Filtros: FunctionComponent<FilterProps> = (props) => {
     const {data} = props
+    
 
     const [name, setName] = useState<string> ("");
     const [age, setAge] = useState<number>(0);
@@ -22,8 +23,9 @@ const Filtros: FunctionComponent<FilterProps> = (props) => {
 
     const Filter = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
         e.preventDefault();
+        
         if(name !== ""){
-            lover.filter((elem) => elem.name === name)
+            setLista(lover.filter((elem) => elem.name === name))
         }
         if(sex !== ""){
             lover.filter((elem) => elem.sex === sex)
@@ -36,19 +38,18 @@ const Filtros: FunctionComponent<FilterProps> = (props) => {
         }
 
         setLista(lover);
-        e.currentTarget.submit();
     }
 
-
     //[...hobbies, h.currentTarget.value]
+    //para lo q yo quiero de q se actualice todo el rato es usar una señal no un state 
     return(
         <div>
-            <form>
+            <form onSubmit={Filter}>
                 <input type ="text" id="name" name = "name" placeholder={"Nombre"} onBlur={(n) => setName(n.currentTarget.value)}></input>
                 <input type ="number" id="age" name = "age" placeholder={"Edad"} onBlur={(a) => setAge(parseInt(a.currentTarget.value))}></input>
                 <input type ="text" id="sex" name = "sex" placeholder={"Sexo"} onBlur={(s) => setSex(s.currentTarget.value)}></input>
                 <input type ="text" id="hobbies" name = "hobbies" placeholder={"Hobbies"} onBlur={(h) => setHobbies(h.currentTarget.value.split(", "))}></input>
-                <button type="submit" onSubmit={() => Filter}>Filtrar</button>
+                <button type="submit">Filtrar</button>
             </form>
             <div>
                 <Lovers data ={lista} />

@@ -64,7 +64,9 @@ border: #8aa4d8 solid 2px;
 }
 
 .image{
-  scale: 90%;
+  height: 330px;
+  width: 100%;
+  object-fit: cover;
   border-radius: 2%;
 }
 

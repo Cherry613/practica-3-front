@@ -5,8 +5,6 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_DeleteLover from "./routes/api/DeleteLover.ts";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $delete from "./routes/delete.tsx";
 import * as $delete_name_ from "./routes/delete/[name].tsx";
 import * as $hobbies from "./routes/hobbies.tsx";
 import * as $index from "./routes/index.tsx";
@@ -23,8 +21,6 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/api/DeleteLover.ts": $api_DeleteLover,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/delete.tsx": $delete,
     "./routes/delete/[name].tsx": $delete_name_,
     "./routes/hobbies.tsx": $hobbies,
     "./routes/index.tsx": $index,

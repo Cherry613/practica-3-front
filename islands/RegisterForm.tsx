@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent, JSX } from "preact";
 import { comment } from "../types.ts";
+import { IS_BROWSER } from "$fresh/runtime.ts";
 
 
 //hacer el formulario para el nombre y la contraseña
@@ -32,8 +33,11 @@ const RegisterForm: FunctionComponent = () => {
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string>("");
 
-    /*document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-    document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;*/
+    if(IS_BROWSER){
+    document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+     //alert('¡Cuenta creada! Puedes iniciar sesión ahora.');
+    }
 
 
     const faltanDatos = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
@@ -59,57 +63,59 @@ const RegisterForm: FunctionComponent = () => {
         }
     }
 
+
+    //quitar el formulario, dejar solo inputs y luego lo de aqui arriba en vez de coger las cosas del formulario desde una 
     return (
         <form  action ="/register" method="POST" onSubmit={faltanDatos}>
-        <div> 
-           <input type="text" id="name" name="name"
-            placeholder={"Introduce tu nombre"}
+            <div> 
+            <input type="text" id="name" name="name"
+                placeholder={"Introduce tu nombre"}
+                onFocus={() => setError("")}
+                onBlur={(p) => setName(p.currentTarget.value)}/>                    
+            </div>
+            <div>
+            <input type="number" id="age" name="age"
+            placeholder={"Edad"}
             onFocus={() => setError("")}
-            onBlur={(p) => setName(p.currentTarget.value)}/>                    
-        </div>
-        <div>
-           <input type="number" id="age" name="age"
-           placeholder={"Edad"}
-           onFocus={() => setError("")}
-           onBlur={(e) => setAge(parseInt(e.currentTarget.value))}/>                    
-        </div>
-        <div> 
-           <input type="text" id="sex" name="sex"
-           placeholder={"Sexo"}
-           onFocus={() => setError("")}
-           onBlur={(s) => setSex(s.currentTarget.value)}/>                    
-        </div>
-        <div>
-           <input type="text" id="description" name="description"
-           placeholder={"Descripcion"}
-           onFocus={() => setError("")}
-           onBlur={(d) => setDesc(d.currentTarget.value)}/>                    
-        </div>
-        <div>
-           <input type="text" id="hobbies" name="hobbies"
-           placeholder={"Hobbies"}
-           onFocus={() => setError("")}
-           onBlur={(h) => setHobbies([...hobbies ,h.currentTarget.value])}/>                    
-        </div>
-        <div>
-           <input type="text" id="photo" name="photo"
-           placeholder={"Photo"}
-           onFocus={() => setError("")}
-           onBlur={(p) => setPhoto(p.currentTarget.value)}/>                    
-        </div>
-        <div>
-           <input type="text" id="password" name="password"
-           placeholder={"Password"}
-           onFocus={() => setError("")}
-           onBlur={(p) => setPassword(p.currentTarget.value)}/>                    
-        </div>
-        
-        <div>
-           <button type="submit" disabled = {error !== ""}>Submit</button> 
-        </div>
-        <div>
-            {error !== "" && <div class="error">{error}</div>}
-        </div>
+            onBlur={(e) => setAge(parseInt(e.currentTarget.value))}/>                    
+            </div>
+            <div> 
+            <input type="text" id="sex" name="sex"
+            placeholder={"Sexo"}
+            onFocus={() => setError("")}
+            onBlur={(s) => setSex(s.currentTarget.value)}/>                    
+            </div>
+            <div>
+            <input type="text" id="description" name="description"
+            placeholder={"Descripcion"}
+            onFocus={() => setError("")}
+            onBlur={(d) => setDesc(d.currentTarget.value)}/>                    
+            </div>
+            <div>
+            <input type="text" id="hobbies" name="hobbies"
+            placeholder={"Hobbies"}
+            onFocus={() => setError("")}
+            onBlur={(h) => setHobbies([...hobbies ,h.currentTarget.value])}/>                    
+            </div>
+            <div>
+            <input type="text" id="photo" name="photo"
+            placeholder={"Photo"}
+            onFocus={() => setError("")}
+            onBlur={(p) => setPhoto(p.currentTarget.value)}/>                    
+            </div>
+            <div>
+            <input type="text" id="password" name="password"
+            placeholder={"Password"}
+            onFocus={() => setError("")}
+            onBlur={(p) => setPassword(p.currentTarget.value)}/>                    
+            </div>
+            
+            <div>
+            <button type="submit" disabled = {error !== ""}>Submit</button> 
+            </div>
+            <div>
+                {error !== "" && <div class="error">{error}</div>}
+            </div>
     </form>
     )
 }

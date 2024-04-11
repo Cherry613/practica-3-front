@@ -11,17 +11,14 @@ export const handler: Handlers = {
         const data = {
             name: dataForm.get("name") || undefined,
             password: dataForm.get("password") || undefined,
-            age: dataForm.get("age") || undefined,
+            age: parseInt(dataForm.get("age")) || undefined,
             sex: dataForm.get("sex") || undefined,
             description: dataForm.get("description")|| undefined, 
-            hobbies: dataForm.get("hobbies") || undefined,
+            hobbies: dataForm.get("hobbies")?.split(",").map((elem)=> elem.trim()) || undefined,
             photo: dataForm.get("photo") || undefined,
         }
 
-        /*document.cookie = `user=${data.name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-        document.cookie = `password=${data.password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;*/
         debugger;
-        //alert('¡Cuenta creada! Puedes iniciar sesión ahora.');
 
         const response = await axios.post<Lover>("https://lovers.deno.dev/", {
             name:data.name,

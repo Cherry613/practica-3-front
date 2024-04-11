@@ -1,6 +1,5 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent } from "preact";
-import axios from "npm:axios";
 
 type deleteProps ={
     name: string
@@ -12,16 +11,23 @@ export const DeleteLover: FunctionComponent<deleteProps> = (props) => {
     const [password, setPassword] = useState<string> ("");
     const [message, setMessage] = useState<string> ("");
 
+    
     const deleteHero = async () => {
-        //console.log("a");
-        const response = await axios.delete(`/api/DeleteLover`, {data: {
-            name: name,
-            password: password,
-        }});
+        const response = await fetch(`/api/DeleteLover`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({password: password, name: name}),
+        });
         
-        if(response.status === 204){
-            setMessage("Se ha borrado el heroe")
-        }
+        
+        const data = await response.json();
+        
+        /*if(data.status === 200){ //preguntar por el .success / .done / .ok
+
+        }  */ 
+        
     }
 
     return(
@@ -30,7 +36,6 @@ export const DeleteLover: FunctionComponent<deleteProps> = (props) => {
             <button class = "delete" onClick = {deleteHero}>Delete</button>
             {message !== "" && <div>{message}</div>}
         </div>
-        
     )
 }
 
