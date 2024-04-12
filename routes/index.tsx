@@ -20,12 +20,13 @@ export const handler : Handlers = {
 
 export default function Home(props: PageProps<Lover[]>) {
 
+  //<Lovers dataLovers ={props.data} />
   return (
     <div class="mainPage">
       <h1>LoversMatch</h1>
       <button class="register-button" onClick="location.href='/register'">Register</button>
       <Filtros data = {props.data} />
-      <Lovers data={props.data} />
+      
      
     </div>
   );

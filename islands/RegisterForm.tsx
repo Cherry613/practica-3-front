@@ -33,12 +33,6 @@ const RegisterForm: FunctionComponent = () => {
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string>("");
 
-    if(IS_BROWSER){
-    document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-    document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-     //alert('¡Cuenta creada! Puedes iniciar sesión ahora.');
-    }
-
 
     const faltanDatos = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
         e.preventDefault();
@@ -59,6 +53,11 @@ const RegisterForm: FunctionComponent = () => {
         if(errorMsg.length > 0) setError(errorMsg.join(" | "));
         else{
             setError("");
+            if(IS_BROWSER){
+                document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+                document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+                 //alert('¡Cuenta creada! Puedes iniciar sesión ahora.');
+            }
             e.currentTarget.submit();
         }
     }

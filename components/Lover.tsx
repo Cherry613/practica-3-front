@@ -1,5 +1,7 @@
 import { FunctionComponent } from "preact";
 
+// DEPRECATED
+
 type loverProps = {
     name: string,
     description: string,
