@@ -6,7 +6,6 @@ import { Lover } from "../types.ts";
 
 export const handler: Handlers = {
     POST: async (req: Request, ctx: FreshContext) => {
-        //guardarlo en las cookies
         const dataForm = await req.formData();
         const data = {
             name: dataForm.get("name") || undefined,

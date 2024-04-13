@@ -1,7 +1,7 @@
 import { FunctionComponent } from "preact";
 
 // DEPRECATED
-
+/*
 type loverProps = {
     name: string,
     description: string,
@@ -20,4 +20,4 @@ const Lover: FunctionComponent<loverProps> = (props) => {
     )
 }
 
-export default Lover;
+export default Lover;*/

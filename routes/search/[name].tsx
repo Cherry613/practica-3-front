@@ -2,6 +2,8 @@ import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import axios from "npm:axios";
 import { Lover } from "../../types.ts";
 import FullLover from "../../components/FullLover.tsx";
+import Logout from "../../islands/Logout.tsx";
+
 
 
 export const handler: Handlers = {
@@ -23,14 +25,14 @@ export const handler: Handlers = {
 
 
 const Page = (props: PageProps<Lover>) => {
-    const {name, age, sex, description, hobbies, photo, comments} = props.data;
-    // <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments} />
+    const {name, age, sex, description, hobbies, photo, comments, password} = props.data;
 
-    //  SI HAY COMENTARIOS EL COMPONENTE NO FUNCIONA :]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
     return (
         <div>
            <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments}/>
            <a href={`/delete/${name}`}>Borrar</a>
+           <Logout name={name} password= {password} />
+          
         </div>
     )
 

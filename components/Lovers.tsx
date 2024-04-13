@@ -14,9 +14,11 @@ const Lovers: FunctionComponent<loversProps> = (props) => {
            {dataLovers.map((lover) =>{
                 return(
                      <div class="lover">
-                        <img class="image" src={lover.photo} alt={lover.name+ "'s photo"}/>
-                        <h2><a href={`/search/${lover.name}`}>{lover.name}</a></h2>
-                        <p>{lover.description}</p>
+                        <a href={`/search/${lover.name}`}>
+                            <img class="image" src={lover.photo} alt={lover.name+ "'s photo"}/>
+                            <h2>{lover.name}</h2>
+                            <p>{lover.description}</p>
+                        </a>
                     </div>
                 )
            })

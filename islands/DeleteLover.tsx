@@ -12,7 +12,7 @@ export const DeleteLover: FunctionComponent<deleteProps> = (props) => {
     const [message, setMessage] = useState<string> ("");
 
     
-    const deleteHero = async () => {
+    const deleteLover = async () => {
         const response = await fetch(`/api/DeleteLover`, {
             method: "DELETE",
             headers: {
@@ -33,7 +33,7 @@ export const DeleteLover: FunctionComponent<deleteProps> = (props) => {
     return(
         <div>
             <input type="text" id="password" name = "password" placeholder={"Contraseña"} onBlur={(p) => setPassword(p.currentTarget.value)}></input>
-            <button class = "delete" onClick = {deleteHero}>Delete</button>
+            <button class = "delete" onClick = {deleteLover}>Delete</button>
             {message !== "" && <div>{message}</div>}
         </div>
     )

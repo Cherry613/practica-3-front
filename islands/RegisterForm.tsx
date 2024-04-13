@@ -31,28 +31,31 @@ const RegisterForm: FunctionComponent = () => {
     const [hobbies, setHobbies] = useState<string[]>([]);
     const [photo, setPhoto] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [error, setError] = useState<string>("");
+
+    const [message, setMessage] = useState<string>("");
+    const [success, setSuccess] = useState<boolean>(false);
 
 
     const faltanDatos = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
         e.preventDefault();
-        const errorMsg: string[] = [];
+        const Msg: string[] = [];
 
         if(name === "" || sex === "" || description === "" || photo === "" || password == "") {
-            errorMsg.push("Missing name, sex, description, photo or password");
+            Msg.push("Missing name, sex, description, photo or password");
         }
 
         if(age === null){
-            errorMsg.push("Missing age or comments");
+            Msg.push("Missing age or comments");
         }
 
         if(hobbies.length === 0){
-            errorMsg.push("Missing hobbies")
+            Msg.push("Missing hobbies")
         }
 
-        if(errorMsg.length > 0) setError(errorMsg.join(" | "));
+        if(Msg.length > 0) setMessage(Msg.join(" | "));
         else{
-            setError("");
+            setMessage("Success");
+            setSuccess(true);
             if(IS_BROWSER){
                 document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
                 document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
@@ -64,56 +67,58 @@ const RegisterForm: FunctionComponent = () => {
 
 
     //quitar el formulario, dejar solo inputs y luego lo de aqui arriba en vez de coger las cosas del formulario desde una 
+    //<button onClick="window.location.href='/login'">Confirm</button> 
     return (
         <form  action ="/register" method="POST" onSubmit={faltanDatos}>
             <div> 
             <input type="text" id="name" name="name"
                 placeholder={"Introduce tu nombre"}
-                onFocus={() => setError("")}
+                onFocus={() => setMessage("")}
                 onBlur={(p) => setName(p.currentTarget.value)}/>                    
             </div>
             <div>
             <input type="number" id="age" name="age"
             placeholder={"Edad"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(e) => setAge(parseInt(e.currentTarget.value))}/>                    
             </div>
             <div> 
             <input type="text" id="sex" name="sex"
             placeholder={"Sexo"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(s) => setSex(s.currentTarget.value)}/>                    
             </div>
             <div>
             <input type="text" id="description" name="description"
             placeholder={"Descripcion"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(d) => setDesc(d.currentTarget.value)}/>                    
             </div>
             <div>
             <input type="text" id="hobbies" name="hobbies"
             placeholder={"Hobbies"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(h) => setHobbies([...hobbies ,h.currentTarget.value])}/>                    
             </div>
             <div>
             <input type="text" id="photo" name="photo"
             placeholder={"Photo"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(p) => setPhoto(p.currentTarget.value)}/>                    
             </div>
             <div>
             <input type="text" id="password" name="password"
             placeholder={"Password"}
-            onFocus={() => setError("")}
+            onFocus={() => setMessage("")}
             onBlur={(p) => setPassword(p.currentTarget.value)}/>                    
             </div>
             
             <div>
-            <button type="submit" disabled = {error !== ""}>Submit</button> 
+            <button type="submit" disabled = {message !== ""}>Submit</button>
+            
             </div>
             <div>
-                {error !== "" && <div class="error">{error}</div>}
+                {message !== "" && <div class="error">{message}</div>}
             </div>
     </form>
     )

@@ -37,6 +37,8 @@ border: #8aa4d8 solid 2px;
   box-shadow: #6b7280;
   background-color: aqua;
 */
+
+/* text-decoration: none;  -->para que no se muestren las rallitas de abajo al ser un enlace pero tengo q mirar mejor donde ponerlo para q funcione :3*/ 
 .lover{
   overflow: hidden;
   display:flex;

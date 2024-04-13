@@ -24,10 +24,10 @@ export default function Home(props: PageProps<Lover[]>) {
   return (
     <div class="mainPage">
       <h1>LoversMatch</h1>
-      <button class="register-button" onClick="location.href='/register'">Register</button>
-      <Filtros data = {props.data} />
+      <button class="register-button" onClick="window.location.href='/register'">Register</button>
+      <button class="register-button" onClick="window.location.href='/login'">Login</button>
       
-     
+      <Filtros data = {props.data} />
     </div>
   );
 }
