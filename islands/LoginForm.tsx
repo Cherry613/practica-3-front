@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent, JSX } from "preact";
 import { IS_BROWSER } from "$fresh/runtime.ts";
+import { useSignal } from "@preact/signals";
 
 
 
@@ -8,11 +9,10 @@ const LoginForm: FunctionComponent = () => {
 
     const [name, setName] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [error, setError] = useState<string>("");
-    const [logeado, setLogeado] = useState<boolean>(false)
+    const [error, setError] = useState<string>("");   
 
 
-    const faltanDatos = (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
+    const faltanDatos = async (e: JSX.TargetedEvent<HTMLFormElement, Event>) => {
         e.preventDefault();
         const errorMsg: string[] = [];
 
@@ -22,30 +22,33 @@ const LoginForm: FunctionComponent = () => {
 
         if(errorMsg.length > 0) setError(errorMsg.join(" | "));
         else{
+            const response = await fetch(`/api/Login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({name: name, password: password}),
+            });
+            
+            if(response.status !== 200) {
+
+                setError("Error en el login")
+                return 
+            }
+
             setError("");
-            setLogeado(true)
+
             if(IS_BROWSER){
                 document.cookie = `user=${name}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
                 document.cookie = `password=${password}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
 
-                window.location.href = `/search/${name}`;
+                window.location.href = `/profile`;
             }
-            
-            /*const cookies = document.cookie.split("; ");
-            const userC = cookies.find((row) => row.startsWith("user="));
-            const passwordC = cookies.find((row) => row.startsWith("password="));
-            const userC_value= userC ? userC.split("=")[1] : null;
-            const passwordC_value = passwordC ? passwordC.split("=")[1] : null;
-
-            if(name === userC_value && password === passwordC_value){
-                window.location.href = `/search/${name}`;
-            }*/
-            //e.currentTarget.submit();
         }
+
+       
     }
 
-
-    //quitar el formulario, dejar solo inputs y luego lo de aqui arriba en vez de coger las cosas del formulario desde una 
     return (
         <form onSubmit={faltanDatos}>
             <div> 

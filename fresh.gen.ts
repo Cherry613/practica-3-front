@@ -4,46 +4,60 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_AddComment from "./routes/api/AddComment.ts";
+import * as $api_DeleteComment from "./routes/api/DeleteComment.ts";
 import * as $api_DeleteLover from "./routes/api/DeleteLover.ts";
+import * as $api_GetLover from "./routes/api/GetLover.ts";
+import * as $api_Login from "./routes/api/Login.ts";
 import * as $api_UpdateLover from "./routes/api/UpdateLover.ts";
 import * as $delete_name_ from "./routes/delete/[name].tsx";
 import * as $hobbies from "./routes/hobbies.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
+import * as $profile from "./routes/profile.tsx";
 import * as $register from "./routes/register.tsx";
 import * as $search_name_ from "./routes/search/[name].tsx";
 import * as $update from "./routes/update.tsx";
-import * as $Counter from "./islands/Counter.tsx";
+import * as $Comment from "./islands/Comment.tsx";
+import * as $DeleteComments from "./islands/DeleteComments.tsx";
 import * as $DeleteLover from "./islands/DeleteLover.tsx";
 import * as $Filtros from "./islands/Filtros.tsx";
 import * as $LoginForm from "./islands/LoginForm.tsx";
 import * as $Logout from "./islands/Logout.tsx";
 import * as $RegisterForm from "./islands/RegisterForm.tsx";
 import * as $UpdateData from "./islands/UpdateData.tsx";
+import * as $UserPage from "./islands/UserPage.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/AddComment.ts": $api_AddComment,
+    "./routes/api/DeleteComment.ts": $api_DeleteComment,
     "./routes/api/DeleteLover.ts": $api_DeleteLover,
+    "./routes/api/GetLover.ts": $api_GetLover,
+    "./routes/api/Login.ts": $api_Login,
     "./routes/api/UpdateLover.ts": $api_UpdateLover,
     "./routes/delete/[name].tsx": $delete_name_,
     "./routes/hobbies.tsx": $hobbies,
     "./routes/index.tsx": $index,
     "./routes/login.tsx": $login,
+    "./routes/profile.tsx": $profile,
     "./routes/register.tsx": $register,
     "./routes/search/[name].tsx": $search_name_,
     "./routes/update.tsx": $update,
   },
   islands: {
-    "./islands/Counter.tsx": $Counter,
+    "./islands/Comment.tsx": $Comment,
+    "./islands/DeleteComments.tsx": $DeleteComments,
     "./islands/DeleteLover.tsx": $DeleteLover,
     "./islands/Filtros.tsx": $Filtros,
     "./islands/LoginForm.tsx": $LoginForm,
     "./islands/Logout.tsx": $Logout,
     "./islands/RegisterForm.tsx": $RegisterForm,
     "./islands/UpdateData.tsx": $UpdateData,
+    "./islands/UserPage.tsx": $UserPage,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

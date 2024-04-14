@@ -3,6 +3,8 @@ import axios from "npm:axios";
 import { Lover } from "../../types.ts";
 import FullLover from "../../components/FullLover.tsx";
 import Logout from "../../islands/Logout.tsx";
+import Comment from "../../islands/Comment.tsx";
+import DeleteComments from "../../islands/DeleteComments.tsx";
 
 
 
@@ -29,9 +31,9 @@ const Page = (props: PageProps<Lover>) => {
 
     return (
         <div>
-           <FullLover name={name} age= {age} sex={sex} description={description} hobbies={hobbies} photo={photo} comments={comments}/>
-           <a href={`/delete/${name}`}>Borrar</a>
-           <Logout name={name} password= {password} />
+           <FullLover data={props.data}/>
+           <Comment name={name} />
+           <DeleteComments name={name} />
           
         </div>
     )

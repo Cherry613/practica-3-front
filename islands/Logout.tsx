@@ -14,8 +14,8 @@ const Logout: FunctionComponent<LogoutProps> = ({name, password}) => {
         d.setTime(d.getTime() - 1);
 
         if(IS_BROWSER){
-            document.cookie = `user=${name}; expires=${d.toUTCString()}; path=/`;
-            document.cookie = `password=${password}; expires=${d.toUTCString()}; path=/`;   //expires=Fri, 31 Dec 2000 0:0:0 GMT
+            document.cookie = `user=a; expires=${d.toUTCString()}; path=/`;
+            document.cookie = `password=a; expires=${d.toUTCString()}; path=/`;   //expires=Fri, 31 Dec 2000 0:0:0 GMT
 
             window.location.href = `/`;
         }

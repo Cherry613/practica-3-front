@@ -1,22 +1,13 @@
 import { FunctionComponent } from "preact";
-import { comment, Lover } from "../types.ts";
+import { Lover, comment} from "../types.ts";
 
 
 type loverProps = {
-    name: string,
-    age: number,
-    sex: string,
-    description: string,
-    hobbies: Array<string>,
-    photo: string,
-    comments: comment[],
+    data: Lover
 }
 
-const Lover: FunctionComponent<loverProps> = (props) => {
-    const {name, age, sex, description, hobbies, photo, comments} = props;
-
-    //Comments: {comments}
-    //hobbies.length>1? hobbies.join(", "): hobbies --> para q me sacase todo de seguido, pero da error el .join
+const FullLover: FunctionComponent<loverProps> = (props) => {
+    const {name, age, sex, description, hobbies, photo, comments} = props.data;
 
     return(
         <div>
@@ -37,4 +28,4 @@ const Lover: FunctionComponent<loverProps> = (props) => {
     )
 }
 
-export default Lover;
+export default FullLover;
