@@ -23,7 +23,7 @@ const Logout: FunctionComponent<LogoutProps> = ({name, password}) => {
 
     return (
         <div>
-            <button onClick={logout}>Logout</button>
+            <button class="red-button" onClick={logout}>Logout</button>
         </div>
         
     )

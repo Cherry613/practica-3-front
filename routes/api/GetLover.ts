@@ -1,7 +1,4 @@
 import { FreshContext, Handler } from "$fresh/server.ts";
-import axios from "npm:axios";
-import { Lover } from "../../types.ts";
-
 
 export const handler: Handler = {
     GET: async (req: Request, ctx: FreshContext) => {

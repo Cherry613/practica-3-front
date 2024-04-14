@@ -37,12 +37,12 @@ const Filtros: FunctionComponent<FilterProps> = (props) => {
 
     return(
         <div>
-            <input type ="text" id="name" name = "name" placeholder={"Nombre"} onBlur={(n) => setName(n.currentTarget.value)}></input>
-            <input type ="number" id="age" name = "age" placeholder={"Edad"} onBlur={(a) => setAge(parseInt(a.currentTarget.value))}></input>
-            <input type ="text" id="sex" name = "sex" placeholder={"Sexo"} onBlur={(s) => setSex(s.currentTarget.value)}></input>
-            <input type ="text" id="hobbies" name = "hobbies" placeholder={"Hobbies"} onBlur={(h) => setHobbies(h.currentTarget.value.split(", "))}></input>
+            <input class="filter-input" type ="text" id="name" name = "name" placeholder={"Nombre"} onBlur={(n) => setName(n.currentTarget.value)}></input>
+            <input class="filter-input" type ="number" id="age" name = "age" placeholder={"Edad"} onBlur={(a) => setAge(parseInt(a.currentTarget.value))}></input>
+            <input class="filter-input" type ="text" id="sex" name = "sex" placeholder={"Sexo"} onBlur={(s) => setSex(s.currentTarget.value)}></input>
+            <input class="filter-input" type ="text" id="hobbies" name = "hobbies" placeholder={"Hobbies"} onBlur={(h) => setHobbies(h.currentTarget.value.split(", "))}></input>
             
-            <button onClick={Filter}>Filtrar</button>
+            <button class= "pink-button" onClick={Filter}>Filtrar</button>
 
             <Lovers dataLovers ={lista} />
             

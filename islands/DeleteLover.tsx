@@ -32,8 +32,8 @@ export const DeleteLover: FunctionComponent<deleteProps> = (props) => {
 
     return(
         <div>
-            <input type="text" id="password" name = "password" placeholder={"Contraseña"} onBlur={(p) => setPassword(p.currentTarget.value)}></input>
-            <button class = "delete" onClick = {deleteLover}>Delete</button>
+            <input class = "delete-input" type="text" id="password" name = "password" placeholder={"Contraseña"} onBlur={(p) => setPassword(p.currentTarget.value)}></input>
+            <button class = "red-button" onClick = {deleteLover}>Delete</button>
             {message !== "" && <div>{message}</div>}
         </div>
     )

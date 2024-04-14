@@ -1,26 +1,6 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent, JSX } from "preact";
-import { comment } from "../types.ts";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-
-
-//hacer el formulario para el nombre y la contraseña
-// hacer funcion para comprobar que están los dos cosos antes de hacer submit
-/*
-    tmbn estaria bn q si no pones del todo correcto el nombre del personaje te diga algo la pagina y no te salte el error ese rojo to feo
-    en su defecto hacer q eso no pase tambien estaria bn ^^ como cuando los heroes
-*/
-
-//en el handler del register supongo, poner lo de las cookies
-// hacer otra pagina para el login aaaaunq creo q puedo reusar este formulario y cambiar el handler y seria igual aprox
-
-//no hay llamadas a una ruta -> cliente
-
-//datos confidenciales -> sí o sí en el servidor
-//para q los motores de busqueda posicionen mi pag (SEO)
-/* hook -> acciones que se lanzan como reaccion a algo
-*/
-
 
 const RegisterForm: FunctionComponent = () => {
 
@@ -65,11 +45,9 @@ const RegisterForm: FunctionComponent = () => {
         }
     }
 
-
-    //quitar el formulario, dejar solo inputs y luego lo de aqui arriba en vez de coger las cosas del formulario desde una 
     //<button onClick="window.location.href='/login'">Confirm</button> 
     return (
-        <form  action ="/register" method="POST" onSubmit={faltanDatos}>
+        <form class="register-form" action ="/register" method="POST" onSubmit={faltanDatos}>
             <div> 
             <input type="text" id="name" name="name"
                 placeholder={"Introduce tu nombre"}

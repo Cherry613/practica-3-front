@@ -41,10 +41,11 @@ const DeleteComments: FunctionComponent<deleteProps> = (props) => {
 
 
     return(
-        <div>
-            Contraseña del lover del perfil-para borrar mis comentarios de aqui:<input type="text" id="password" name="password" onBlur={(e) => setPassword(e.currentTarget.value)}></input>
+        <div class="delete-comments">
+            <strong>Eliminar tus comentarios: </strong>
+            Contraseña de {name}: <input type="text" id="password" name="password" onBlur={(e) => setPassword(e.currentTarget.value)}></input>
+            
             <button disabled = {loggeado === false} onClick={comentar}>Eliminar</button>
-
         </div>
     )
 }

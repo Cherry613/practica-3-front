@@ -45,10 +45,18 @@ export const handler: Handlers = {
 const Page = (props: PageProps) => {
 
     return (
-        <div class="register">
-            <h1>Introduce tus datos</h1>
-            <RegisterForm/>
-        </div>
+        <body class="registerPage">
+            <img class ="imagen-escalada-register" src={("https://ov10-engine.flamingtext.com/netfu/tmp28001/coollogo_com-113781656.png")}></img>
+            <div class="register-login">
+                <h1 class="register">Introduce tus datos</h1>
+                
+                <RegisterForm/>
+                <button class="pink-button" onClick="window.location.href='/'">Pagina principal</button>
+            </div> 
+        </body>
+        
+
+        
         
     )
 }

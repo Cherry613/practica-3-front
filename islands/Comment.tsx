@@ -47,12 +47,14 @@ const Comment: FunctionComponent<commentProps> = (props) => {
 
 
     return(
-        <div>
-            Password del lover: <input type="text" id="password" name="password" onBlur={(e) => setPassword(e.currentTarget.value)}></input>
-            Comentatio:<input type="text" id="message" name="message" onBlur={(e) => setMessage(e.currentTarget.value)}></input>
+        <div class= "comentar">
+            <strong>Publicar comentario: </strong>
+            Password de {name}: <input type="text" id="password" name="password" onBlur={(e) => setPassword(e.currentTarget.value)}></input>
+            Comentario:<input type="text" id="message" name="message" onBlur={(e) => setMessage(e.currentTarget.value)}></input>
             
             <button disabled = {loggeado === false} onClick={comentar}>Publish</button>
         </div>
+        
     )
 }
 

@@ -21,7 +21,7 @@ const UserPage: FunctionComponent = () => {
         const userC_value = userC ? userC.split("=")[1] : null;
         const passwordC_value = passwordC ? passwordC.split("=")[1] : null;
 
-        const response_login = await fetch(`/api/Login`, {  //si esto es correcto tenemos un usuario valido
+        const response_login = await fetch(`/api/Login`, { //si esto es correcto tenemos un usuario valido
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,15 +40,20 @@ const UserPage: FunctionComponent = () => {
         setLover(data)
         setLoggeado(true)
     }
-            
+    
+  
     return(
         <div>
-            <button onClick={() => window.location.href='/'}>Pagina principal</button>
-            <button onClick={cookies}>Mostrar perfil</button>
+            <div class="botones-main">
+                <button class="boton-profile" onClick={() => window.location.href='/'}>Pagina principal</button>
+                <button class="boton-profile" onClick={cookies}>Mostrar perfil</button>
+            </div>
+            
             {loggeado && (
-                <div>
+                <div class="search">
                     <FullLover data={lover}></FullLover>
                     <Logout />
+                    <strong class="desplazar">Borrar cuenta: </strong>
                     <DeleteLover name={lover.name}></DeleteLover>
                 </div>
                 )}

@@ -30,12 +30,16 @@ const Page = (props: PageProps<Lover>) => {
     const {name, age, sex, description, hobbies, photo, comments, password} = props.data;
 
     return (
-        <div>
-           <FullLover data={props.data}/>
-           <Comment name={name} />
-           <DeleteComments name={name} />
-          
-        </div>
+        <body class="pag-Search">
+            <div class="search">
+                <span><button class="back-button" onClick="window.location.href='/'">Back</button></span>
+                <FullLover data={props.data}/>
+                <span class="comentarios"><Comment name={name} />
+                <DeleteComments name={name} /></span>
+                
+            </div>
+        </body>
+        
     )
 
 }

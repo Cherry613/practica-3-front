@@ -5,10 +5,13 @@ import UserPage from "../islands/UserPage.tsx";
 const Page = (props: PageProps) => {
 
     return (
-        <div class="register">
-            <h1>Introduce tus datos</h1>
-            <UserPage/>
-        </div>
+        <body class="profilePage">
+            <div class="profile">
+                <h1>Introduce tus datos</h1>
+                <UserPage/>
+            </div>
+        </body>
+       
         
     )
 }

@@ -1,7 +1,6 @@
 import { useState } from "preact/hooks";
 import { FunctionComponent, JSX } from "preact";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { useSignal } from "@preact/signals";
 
 
 
@@ -32,7 +31,7 @@ const LoginForm: FunctionComponent = () => {
             
             if(response.status !== 200) {
 
-                setError("Error en el login")
+                setError("No estas registrado!")
                 return 
             }
 
@@ -44,13 +43,11 @@ const LoginForm: FunctionComponent = () => {
 
                 window.location.href = `/profile`;
             }
-        }
-
-       
+        }   
     }
 
     return (
-        <form onSubmit={faltanDatos}>
+        <form class="login-form" onSubmit={faltanDatos}>
             <div> 
             <input type="text" id="name" name="name"
                 placeholder={"Introduce tu nombre"}
@@ -69,7 +66,10 @@ const LoginForm: FunctionComponent = () => {
             <button type="submit" disabled = {error !== ""}>Submit</button> 
             </div>
             <div>
-                {error !== "" && <div class="error">{error}</div>}
+                {error !== "" && <div>{error}</div>}
+                {error === "No estas registrado!" && <div>
+                    <button onClick={() => window.location.href = `/register`}>Registrarse</button>
+                    </div>}
             </div>
         </form>
     )

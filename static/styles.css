@@ -1,24 +1,174 @@
 
-h1 {
-  text-shadow: 0 0 7px #ff00bf;
+h1{
+  text-shadow: 0 0 10px #ff00bf;
   color: #ffffff;
   font-size: 50px;
   text-align: center;
 }
-
-/*
-f75d8a
-f879d8
-fb86ba creo q este es el q mas me gusta al menos en portatil
-o el fabada q es aun mas pastel
-f8c1dc y ese aun mas
-*/
-.mainPage{
-  background-color: #f8c1dc;
+.register{
+  text-shadow: 0 0 10px #6961ff;
 }
 
-.register{
-  background-color: #f8c1dc;
+/*llamar back y ponerlo en todo*/
+/*fondo de las paginas*/
+/*https://img.freepik.com/vector-gratis/fondo-monocromatico-blanco-degradado_23-2149001594.jpg?w=1380&t=st=1713106753~exp=1713107353~hmac=1629bc066db062ba01728410525fde35c5a063a41aef54713abe7d095d75cb9c.jpg
+https://img.freepik.com/fotos-premium/telon-fondo-sutil-generico-sitio-web-estilo-morfismo-vidrio-ar-169-estilizar-750-v-6-j_864601-2885.jpg)
+https://images7.alphacoders.com/335/335843.jpg
+
+https://images2.alphacoders.com/839/839399.jpg
+
+*/
+.mainPage{
+  /*background-color: #f8c1dc;*/
+  background: url(https://images7.alphacoders.com/335/335843.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*REGISTRARSE*/
+
+.registerPage{
+  background: url(https://images7.alphacoders.com/330/330712.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen-escalada-register{
+  scale: 80%
+}
+
+.register-login{
+  /*background-color: #f8c1dc;*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+
+  background-color: #95eef7;/*f8c1dc   fce0f7*/
+  border: solid 1px rgb(126, 213, 223);/*rgb(242, 177, 177)*/ 
+  
+  input{
+    margin-top: 5px;
+    font-size: medium;
+    border: solid 1px rgb(126, 213, 223); /*rgb(242, 177, 177)*/
+  }
+  
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    align-items: flex-start;
+    background-color: #defcff;/*f8c1dc f8baed*/
+    border: solid 1px rgb(126, 213, 223); /*rgb(242, 177, 177)*/
+    font-size: medium;
+  }
+}
+
+/*FILTROS*/
+
+.filter-input{
+  width: 200px;
+  border: solid 1px rgb(242, 177, 177);
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+/*LOGIN*/
+.loginPage{
+  background: url(https://img.freepik.com/foto-gratis/fondo-sala-estudio-rosa-claro-liso-vacio-abstracto-uso-como-montaje-exhibicion-productos-banner-plantilla_1258-71406.jpg?t=st=1713128740~exp=1713132340~hmac=a197bf82a834607fc0654e74f4cf1eaf527b008fb1c86f837869353afb64ebc7&w=1380);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen-escalada-login{
+  scale: 60%
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+
+  background-color: #fce0f7;/*f8c1dc   fce0f7*/
+  border: solid 1px rgb(242, 177, 177);/*rgb(242, 177, 177)*/ 
+  
+  input{
+    margin-top: 5px;
+    font-size: medium;
+    border: solid 1px rgb(242, 177, 177); /*rgb(242, 177, 177)*/
+  }
+  
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    align-items: flex-start;
+    background-color: #f8baed;
+    border: solid 1px rgb(242, 177, 177); 
+    font-size: medium;
+  }
+}
+
+/*PROFILE*/
+.profilePage{
+  background: url(https://images3.alphacoders.com/774/774375.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.desplazar{
+  margin-left: 40px;
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.boton-profile{
+  background-color:#f8baed;/*f8c1dc*/
+  border: solid 1px rgb(242, 177, 177);
+  font-size: medium;
+  width:max-content;
+}
+
+.delete-input{
+  margin-top: 5px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  font-size: medium;
+  border: solid 1px rgb(242, 177, 177);
+}
+
+
+/*botones*/
+.botones-main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.pink-button{
+  background-color:#f8baed;/*f8c1dc*/
+  border: solid 1px rgb(242, 177, 177);
+  font-size: medium;
+  width:max-content;
 }
 
 .register-button{
@@ -28,31 +178,163 @@ f8c1dc y ese aun mas
   font-size: 20px;
   &:hover{
     background-color: rgb(66, 140, 252);
+    box-shadow: 0 0 5px 0 rgb(66, 140, 252);
+  }
+}
+.back-button{
+  margin: 30px 0px 0px 40px;
+  background-color: rgb(223, 109, 251);
+  border: solid 2px rgb(223, 63, 252);
+
+  color:rgb(247, 237, 224);
+  font-size: 20px;
+  &:hover{
+    background-color: rgb(223, 63, 252);
+    box-shadow: 0 0 5px 0 rgb(223, 63, 252);
   }
 }
 
-/*
-border: #8aa4d8 solid 2px;
-  border-radius: 5%;
-  box-shadow: #6b7280;
-  background-color: aqua;
-*/
+.red-button{
+  width: 100px;
+  background-color: rgb(255, 68, 68);
+  border: solid 2px rgb(252, 50, 50);
+  margin-top: 20px;
+  margin-left: 40px;
+  color:rgb(247, 237, 224);
+  &:hover{
+    background-color: rgb(251, 34, 34);
+    box-shadow: 0 0 5px 0 rgb(251, 34, 34);
+  }
+}
 
-/* text-decoration: none;  -->para que no se muestren las rallitas de abajo al ser un enlace pero tengo q mirar mejor donde ponerlo para q funcione :3*/ 
+/*lovers*/
 .lover{
   overflow: hidden;
   display:flex;
   flex-direction: column;
-  align-items: center ;
+  align-items: center;
   flex-wrap: wrap;
   margin: 10px 0px 10px 0px;
   width: 250px;
   text-align: center;
-  background-color: #fff6da;
+  background-color: #f8c1dc;/*#fff6da*/
   box-shadow: 0 0 10px 0 #ff00bf;/*rgba(0,0,0,0.2)*/
   border-radius: 10px;
   h2{
     align-items: flex-start;
+  }
+}
+
+/*pagina de busqueda de cada lover*/
+.pag-Search{
+  background: url(https://images7.alphacoders.com/335/335843.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content:space-around;
+
+}
+
+.search{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: #f8c1dc;
+  box-shadow: 0 0 10px 0 #ff00bf;
+  margin-top: 20px;
+  border-radius: 10px;
+  width:fit-content;
+}
+
+.full-lover{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.full-lover-main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 30px 40px 30px 40px;
+  background-color: #fce0f7; /*#ffffff*/
+  border-radius: 3%;
+
+  .img{
+    height: 330px;
+    width: 100%;
+    border-radius: 2%;
+  }
+}
+
+.full-lover-extra{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 40px 30px 40px;
+  background-color: #fce0f7;  /*#ffffff*/
+  border-radius: 3%;
+}
+
+
+.comentarios{
+  display: flex;
+  flex-direction: row;
+}
+
+.comentar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 50px 20px 40px;
+  /*border: solid 2px rgb(255, 0, 170);
+  border-radius: 2%;*/
+  input{
+    width: 200px;
+    background-color:#fce0f7;/*f8c1dc*/
+    border: solid 1px rgb(242, 177, 177);
+  }
+  button{
+    width: 100px;
+    background-color: rgb(68, 207, 61);
+    border: solid 2px rgb(29, 205, 19);
+    margin-top: 20px;
+    color:rgb(247, 237, 224);
+    &:hover{
+      background-color: rgb(29, 205, 19);
+      box-shadow: 0 0 5px 0 rgb(29, 205, 19);
+    }
+  }
+}
+
+.delete-comments {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0px 50px 20px 40px;
+  /*border: solid 2px rgb(255, 0, 170);
+  border-radius: 2%;*/
+  input{
+    width: 200px;
+    background-color:#fce0f7;/*f8c1dc*/
+    border: solid 1px rgb(242, 177, 177);
+  }
+  button{
+    width: 100px;
+    background-color: rgb(255, 68, 68);
+    border: solid 2px rgb(252, 50, 50);
+    margin-top: 20px;
+    color:rgb(247, 237, 224);
+    &:hover{
+      background-color: rgb(251, 34, 34);
+      box-shadow: 0 0 5px 0 rgb(251, 34, 34);
+    }
   }
 }
 
