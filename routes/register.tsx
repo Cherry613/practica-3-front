@@ -46,7 +46,7 @@ const Page = (props: PageProps) => {
 
     return (
         <body class="registerPage">
-            <img class ="imagen-escalada-register" src={("https://ov10-engine.flamingtext.com/netfu/tmp28001/coollogo_com-113781656.png")}></img>
+            <img class ="imagen-escalada-register" src={("https://files.catbox.moe/o0hq9m.png")}></img>
             <div class="register-login">
                 <h1 class="register">Introduce tus datos</h1>
                 

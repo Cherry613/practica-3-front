@@ -5,7 +5,7 @@ const Page = (props: PageProps) => {
 
     return (
         <body class="loginPage">
-           <img class="imagen-escalada-login" src={("https://de24-engine.flamingtext.com/netfu/tmp28000/coollogo_com-14259400.png")}></img>
+           <img class="imagen-escalada-login" src={("https://files.catbox.moe/hiq1jt.png")}></img>
            <div class="register-login">
                 <h1>Login</h1>
                 <LoginForm/>
